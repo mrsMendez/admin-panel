@@ -1,9 +1,9 @@
-// routes/clientes.js
+
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-// GET /clientes
+
 router.get('/', async (req, res) => {
   try {
     const result = await db.query('SELECT * FROM clientes ORDER BY id');
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// POST /clientes
+
 router.post('/', async (req, res) => {
   const { nombre, email } = req.body;
 
@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// PUT /clientes/:id
+
 router.put('/:id', async (req, res) => {
   const id = Number(req.params.id);
   const { nombre, email } = req.body;
@@ -59,7 +59,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// DELETE /clientes/:id
+
 router.delete('/:id', async (req, res) => {
   const id = Number(req.params.id);
 
@@ -73,7 +73,7 @@ router.delete('/:id', async (req, res) => {
     }
     res.sendStatus(204); // Sin contenido
   } catch (error) {
-  console.error('Error al insertar cliente:', error); // 👈 muestra error completo
+  console.error('Error al insertar cliente:', error); 
   res.status(500).json({ error: error.message });
 }
 

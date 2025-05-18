@@ -1,9 +1,9 @@
-// routes/empleados.js
+
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-// GET /empleados
+
 router.get('/', async (req, res) => {
   try {
     const result = await db.query('SELECT * FROM empleados ORDER BY id');
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// POST /empleados
+
 router.post('/', async (req, res) => {
   const { id, nombre, cargo } = req.body;
 
@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// PUT /empleados/:id
+
 router.put('/:id', async (req, res) => {
   const id = Number(req.params.id);
   const { nombre, cargo } = req.body;
@@ -58,7 +58,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// DELETE /empleados/:id
+
 router.delete('/:id', async (req, res) => {
   const id = Number(req.params.id);
 

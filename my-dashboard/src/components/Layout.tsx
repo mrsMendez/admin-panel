@@ -6,7 +6,7 @@ export default function Layout() {
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#0e1117', color: '#fff' }}>
-      {/* Sidebar */}
+      
       <aside
         style={{
           width: '220px',
